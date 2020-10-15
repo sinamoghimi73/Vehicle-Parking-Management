@@ -3,6 +3,6 @@
 
 int main() {
   Vehicle sina;
-  std::cout << sina.getManufacturer() << " " << sina.getModel() << " " << sina.getProductionYear() << std::endl;
+  std::cout << sina.getManufacturer() << "\n" << sina.getModel() << "\n" << sina.getProductionYear() << std::endl;
   return 0;
 }

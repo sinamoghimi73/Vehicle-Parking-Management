@@ -1,5 +1,7 @@
 #include "vehicle.h"
 #include <iostream>
+#include <sstream>
+#include <stdio.h>
 
 Vehicle::Vehicle()
     : _type{noVehicleType}, _manufacturer{}, _model{}, _productionYear{} {
@@ -41,14 +43,16 @@ VehicleType Vehicle::getType() { return _type; }
 
 void Vehicle::setManufacturer() {
   std::cout << "Please enter the manufacturer's name:\t";
-  std::cin >> _manufacturer;
+  getchar();
+  std::getline(std::cin, _manufacturer);
+
 }
 
 void Vehicle::setModel() {
   switch (_type) {
   case 1:
     std::cout << "Please enter your bus's model:\t";
-    std::getline(std::cin, _manufacturer);
+    std::getline(std::cin, _model);
     break;
   case 2:
     std::cout << "Please enter your car's model:\t";
@@ -56,10 +60,10 @@ void Vehicle::setModel() {
     break;
   case 3:
     std::cout << "Please enter your motorcycle's model:\t";
-    std::cin >> _model;
+    std::getline(std::cin, _model);
     break;
   default:
-    _type = noVehicleType;
+    _model = "Nothing";
     break;
   }
 }

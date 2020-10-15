@@ -1,19 +1,22 @@
+#include "vehicle.h"
 #include <iostream>
-#include <vehicle.h>
 
-Vehicle::Vehicle() {
+Vehicle::Vehicle()
+    : _type{noVehicleType}, _manufacturer{}, _model{}, _productionYear{} {
   setType();
   setManufacturer();
   setModel();
   setProductionYear();
 }
+
 void Vehicle::setType() {
   int num{};
-  std::cout << "Please select your vehicle type: 1.Bus, 2.Car, 3.Motorcycle\t";
+  std::cout << "Please select your vehicle type:\n1.Bus, 2.Car, 3.Motorcycle\t";
   std::cin >> num;
   std::cout << std::endl;
   while (num > 3 || num < 1) {
-    std::cout << "The entered value is wrong, please try again:\t";
+    std::cout << "The entered value is wrong, please try again:\n1.Bus, 2.Car, "
+                 "3.Motorcycle\t";
     std::cin >> num;
     std::cout << std::endl;
   }

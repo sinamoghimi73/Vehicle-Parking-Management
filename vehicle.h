@@ -16,6 +16,9 @@ public:
 
   // getters
   VehicleType getType();
+  std::string getManufacturer();
+  std::string getModel();
+  int getProductionYear();
 
 private:
   VehicleType _type;
